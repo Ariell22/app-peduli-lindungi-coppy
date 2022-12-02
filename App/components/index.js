@@ -1,7 +1,9 @@
 import { 
     PrimaryButton,
     SecondaryButton,
-    InfoButton
+    InfoButton,
+    CusColorButton,
+    BackButton
 } from './button/ButtonComponet'
 import { 
     MainCard,
@@ -13,5 +15,7 @@ export{
     MainCard,
     BoxCard,
     SecondaryButton,
-    InfoButton
+    InfoButton,
+    CusColorButton,
+    BackButton
 }

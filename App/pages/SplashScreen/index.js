@@ -31,7 +31,7 @@ export default SplashScreen =({navigation})=> {
         <Text style={style.footherText}>Bekerjasama dengan</Text>
         <View style={style.footherLogo}>
           <Image source={LogoKpc} style={style.logoImage}/>
-          <Image source={LogoKominfo} style={{width:100, height:60,resizeMode:'contain'}}/>
+          <Image source={LogoKominfo} style={{width:75, height:45,resizeMode:'contain',marginTop:25}}/>
           <Image source={LogoKemkes} style={style.logoImage}/>
           <Image source={LogoBumn} style={style.logoImage}/>
         </View>
@@ -58,10 +58,11 @@ const style = StyleSheet.create({
     resizeMode:'center'
   },  
   logoImage:{
-    width:100, 
-    height:130, 
+    width:75, 
+    height:75, 
     resizeMode:'contain',
-    marginLeft:10
+    marginLeft:7,
+    marginTop:25,
   },
   footherText:{
     fontWeight:'bold',

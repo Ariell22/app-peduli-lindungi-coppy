@@ -7,7 +7,8 @@ import {
   LogoKpc
  } from '../../assets/images'
 import {
-  PrimaryButton
+  PrimaryButton,
+  CusColorButton
 } from '../../components'
 import { 
   View,
@@ -23,6 +24,10 @@ export default LoginScreen =({navigation})=> {
   
   const onSubmitLogin=()=>{
     navigation.replace('HomeScreen')
+  }
+
+  const onClickRegister=()=>{
+    navigation.replace('Register')
   }
 
 
@@ -46,16 +51,23 @@ export default LoginScreen =({navigation})=> {
             secureTextEntry
             value={password}
           />
-
+          <View style={{marginTop:10}}>
           <PrimaryButton
             title="Login"
             onPress={onSubmitLogin}/>
+
+          <CusColorButton
+            title="Register"
+            onPress={onClickRegister}
+            style={{backgroundColor:'#730075',marginTop:10}}
+            />
+          </View>
         </View>
 
         <Text style={style.footherText}>Bekerjasama dengan</Text>
         <View style={style.footherLogo}>
           <Image source={LogoKpc} style={style.logoImage}/>
-          <Image source={LogoKominfo} style={{width:100, height:60,resizeMode:'contain'}}/>
+          <Image source={LogoKominfo} style={{width:75, height:45,resizeMode:'contain',marginTop:25}}/>
           <Image source={LogoKemkes} style={style.logoImage}/>
           <Image source={LogoBumn} style={style.logoImage}/>
         </View>
@@ -72,7 +84,9 @@ const style = StyleSheet.create({
   },  
   logoTopStyle:{
     width:150,
-    height:150
+    height:150,
+    resizeMode:'contain'
+
   },
   logoContainer:{
     alignItems:'center'
@@ -94,10 +108,11 @@ const style = StyleSheet.create({
     flexDirection:'row'
   },
   logoImage:{
-    width:100, 
-    height:130, 
+    width:75, 
+    height:75, 
     resizeMode:'contain',
-    marginLeft:10
+    marginLeft:7,
+    marginTop:25
   },
   mainContainer:{
     flex:1, 

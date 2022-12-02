@@ -43,7 +43,7 @@ export const MainCard=(props)=>{
 
 export const BoxCard=(props)=>{
     return (
-        <View style={{width:90, alignContent:'center'}}>
+        <View style={{width:85, alignContent:'center'}}>
             <TouchableOpacity style={[style.imgButton, props.style]}>
                 <Image 
                     source={props.source} 
@@ -95,8 +95,8 @@ const style = StyleSheet.create({
         fontSize:14,
     },
     imgButton:{
-        width:90,
-        height:90,
+        width:60,
+        height:60,
         //borderWidth:1,
         borderRadius:15,
         justifyContent:'center',
@@ -104,8 +104,8 @@ const style = StyleSheet.create({
 
     },
     imgBtnStyle:{
-        width:70,
-        height:70,
+        width:45,
+        height:45,
         aspectRatio:1,
         borderRadius:15,
     }

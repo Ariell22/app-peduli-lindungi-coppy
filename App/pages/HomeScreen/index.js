@@ -13,7 +13,8 @@ import{
 
 import{
     MainCard,
-    BoxCard
+    BoxCard,
+    BackButton
 } from '../../components'
 
 import{
@@ -27,7 +28,14 @@ import{
     ICHospital
 } from '../../assets/images'
 
-export default HomeScreen =()=> {
+export default HomeScreen =({navigation})=> {
+
+    const onClickNotification=()=>{
+        navigation.replace('Notification')
+    }
+
+
+
     return (
         <SafeAreaView  style={style.mainContainer}>
             <View style={style.header}>
@@ -39,11 +47,15 @@ export default HomeScreen =()=> {
                         Hi
                     </Text>
                     <Text style={style.haderText}>
-                        Sata Lesmana
+                        Ariell Apriliano Dentto
                     </Text>
                 </View>
                 <View style={{flex:1}}>
-                    <Image source={ICNotification}/>
+                    <BackButton
+                     source={ICNotification}
+                     onPress={onClickNotification}
+                    />
+                    
                 </View>
             </View>
             <View>

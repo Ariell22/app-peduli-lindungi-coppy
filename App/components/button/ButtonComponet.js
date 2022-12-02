@@ -8,7 +8,8 @@ import {
 } from 'react-native';
 import{
     ICExpandMore,
-    ICScanQr
+    ICScanQr,
+    ICBack
 } from '../../assets/images'
 
 
@@ -40,6 +41,28 @@ export const InfoButton=(props)=>{
             style={style.infoBtnStyle}>
                 <Image source={ICScanQr}/>
                 <Text style={style.texBtnInfo}>{props.title}</Text>
+        </TouchableOpacity>
+    )
+}
+
+
+export const BackButton=(props)=>{
+    return(
+        <TouchableOpacity 
+            onPress={props.onPress}
+            style={style.BackButton}>
+                <Image source={props.source} style={style.BackButton}/>
+        </TouchableOpacity>
+    )
+}
+
+
+export const CusColorButton=(props)=>{
+    return(
+        <TouchableOpacity 
+            onPress={props.onPress} 
+            style={[style.primaryBtnStyle,props.style]}>
+            <Text style={style.texBtn}>{props.title}</Text>
         </TouchableOpacity>
     )
 }
@@ -84,5 +107,10 @@ const style = StyleSheet.create({
         fontWeight:'bold',
         marginLeft:8,
         color:'#259AD5'
+    },
+    BackButton:{
+       width:30,
+       height:30,
+       resizeMode:'contain'
     }
 })
