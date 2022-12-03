@@ -19,6 +19,8 @@ import ICCovitStatistic from './images/ic_statistic_covid.jpg'
 import ICHospital from './images/ic_find_hospital.jpg'
 import ICBack from './images/ic_back.png'
 import ICEmpty from './images/ic_empty.jpg'
+import ICProfile from './images/profile.png'
+import ICExpand from './images/expand_profile.png'
 
 export{
     LogoText,
@@ -41,5 +43,7 @@ export{
     ICCovitStatistic,
     ICHospital,
     ICBack,
-    ICEmpty
+    ICEmpty,
+    ICProfile,
+    ICExpand
 }

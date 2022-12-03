@@ -6,7 +6,8 @@ import {
   LoginScreen,
   HomeScreen,
   Register,
-  Notification
+  Notification,
+  Account
 } from './App/pages'
 
 const Stack = createNativeStackNavigator();
@@ -14,12 +15,13 @@ const Stack = createNativeStackNavigator();
 const  App = ()=> {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="HomeScreen">
+      <Stack.Navigator initialRouteName="Account">
         <Stack.Screen name="SplashScreen" component={SplashScreen} options={{headerShown: false}} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} options={{headerShown: false}}/>
         <Stack.Screen name="HomeScreen" component={HomeScreen} options={{headerShown: false}}/>
         <Stack.Screen name="Register" component={Register} options={{headerShown: false}}/>
         <Stack.Screen name="Notification" component={Notification} options={{headerShown: false}}/>
+        <Stack.Screen name="Account" component={Account} options={{headerShown: false}}/>
 
       </Stack.Navigator>
     </NavigationContainer>

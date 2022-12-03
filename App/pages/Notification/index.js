@@ -14,7 +14,7 @@ import {
   SafeAreaView
  } from 'react-native';
 
-export default LoginScreen =({navigation})=> {
+export default Notfication =({navigation})=> {
   
   const onClickBack=()=>{
     navigation.replace('HomeScreen')

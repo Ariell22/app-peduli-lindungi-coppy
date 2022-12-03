@@ -15,11 +15,38 @@ import {
   StyleSheet,
   SafeAreaView
  } from 'react-native';
+ import DateTimePicker from '@react-native-community/datetimepicker';
 
-export default LoginScreen =({navigation})=> {
+
+
+export default Register =({navigation})=> {
   const [email, onSetEmail] = React.useState(null);
   const [password, onSetPassword] = React.useState(null);
+
   
+  const [date, setDate] = React.useState(new Date());
+  const [mode, setMode] = React.useState('date');
+  const [show, setShow] = React.useState(false);
+
+  const onChange = (event, selectedDate) => {
+    const currentDate = selectedDate;
+    setShow(false);
+    setDate(currentDate);
+  };
+
+  const showMode = (currentMode) => {
+    if (Platform.OS === 'android') {
+      setShow(false);
+      // for iOS, add a button that closes the picker
+    }
+    setMode(currentMode);
+  };
+
+  const showDatepicker = () => {
+    setShow(true);
+  };
+
+
   const onClickBack=()=>{
     navigation.replace('LoginScreen')
   }
@@ -51,6 +78,10 @@ export default LoginScreen =({navigation})=> {
             <TextInput
               placeholder='Type NIK'
               style={style.inputSytle}
+              keyboardType='numeric'
+              // onChangeText={(text)=> this.onChanged(text)}
+              // value={this.state.myNumber}
+              maxLength={20}  //setting limit of input
               />
           </View>
 
@@ -74,11 +105,25 @@ export default LoginScreen =({navigation})=> {
               placeholder='MM/DD/YYYY'
               style={style.inputDate}
               editable = {false}
+              format='MM-DD-YYYY'
+              value={date.toLocaleString()}
               />
            <CusColorButton
            title="SELECT DATE"
-        style={{marginTop:10,height:40}}/>
+        style={{marginTop:10,height:40}}
+        onPress={showDatepicker}
+        />
+        {show && (
+            <DateTimePicker
+            testID="dateTimePicker"
+            value={date}
+            mode={mode}
+            is24Hour={true}
+            onChange={onChange}
+          />
+          )}
               </View>
+           
           </View>
 
           <View>
@@ -103,6 +148,10 @@ export default LoginScreen =({navigation})=> {
             <TextInput
               placeholder='Type Phone Number'
               style={style.inputSytle}
+              keyboardType='numeric'
+              // onChangeText={(text)=> this.onChanged(text)}
+              // value={this.state.myNumber}
+              maxLength={13}  //setting limit of input
               />
           </View>
 
@@ -125,6 +174,7 @@ export default LoginScreen =({navigation})=> {
 
         </View>
       </View>
+    
       </SafeAreaView>
         
     );
@@ -144,6 +194,7 @@ const style = StyleSheet.create({
   },
   inputSytle:{
     height: 40,
+    width:'90%',
     margin: 12,
     borderWidth: 1,
     borderColor:'#006175',

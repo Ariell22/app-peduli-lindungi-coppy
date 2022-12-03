@@ -3,7 +3,8 @@ import {
     SecondaryButton,
     InfoButton,
     CusColorButton,
-    BackButton
+    BackButton,
+    TextButton
 } from './button/ButtonComponet'
 import { 
     MainCard,
@@ -17,5 +18,6 @@ export{
     SecondaryButton,
     InfoButton,
     CusColorButton,
-    BackButton
+    BackButton,
+    TextButton
 }

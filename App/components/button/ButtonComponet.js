@@ -9,7 +9,9 @@ import {
 import{
     ICExpandMore,
     ICScanQr,
-    ICBack
+    ICBack,
+    ICExpand
+
 } from '../../assets/images'
 
 
@@ -51,7 +53,7 @@ export const BackButton=(props)=>{
         <TouchableOpacity 
             onPress={props.onPress}
             style={style.BackButton}>
-                <Image source={props.source} style={style.BackButton}/>
+            <Image source={props.source} style={style.BackButton}/>
         </TouchableOpacity>
     )
 }
@@ -66,8 +68,46 @@ export const CusColorButton=(props)=>{
         </TouchableOpacity>
     )
 }
+export const TextButton=(props)=>{
+    return(
+        <TouchableOpacity 
+            onPress={props.onPress} 
+            style={[style.TextButtonStyle,props.style]}>
+            <Text style={style.textButtonColor}>{props.title}</Text>
+            <Image source={ICExpand} style={style.ExpandStyle}/>
+        </TouchableOpacity>
+    )
+}
 
 const style = StyleSheet.create({
+    TextButtonStyle:{
+        padding:10,
+        border:1,
+        borderRadius:10,
+        marginLeft: 7,
+        flexDirection:'row',
+        borderWidth:1,
+        borderStartWidth:0,
+        borderEndWidth:0,
+        borderTopWidth:0,
+        borderColor:'#D6D6D6',
+    },    
+    ExpandStyle:{
+        width:20,
+        height:20,
+        resizeMode:'contain',
+        marginTop:3.7,
+        marginRight:-40,
+        flex:2,
+
+    },
+    textButtonColor:{
+        color:'#229BD8',
+        flex:3,
+        marginTop:6,
+        fontSize:13,
+        textAlign:'left'
+    },
     primaryBtnStyle:{
         backgroundColor:'#006175',
         padding:10,

@@ -34,15 +34,23 @@ export default HomeScreen =({navigation})=> {
         navigation.replace('Notification')
     }
 
+    const onClickAccount=()=>{
+        navigation.replace('Account')
+    }
+
 
 
     return (
         <SafeAreaView  style={style.mainContainer}>
             <View style={style.header}>
-                <View style={{flex:1}}>
-                    <Image source={ICAccount}/>
+            <View style={{flex:1}}>
+                    <BackButton
+                     source={ICAccount}
+                     onPress={onClickAccount}
+                    />
+                    
                 </View>
-                <View style={{flex:10, flexDirection:'row'}}>
+                <View style={{flex:10, flexDirection:'row',marginTop:5,marginLeft:6}}>
                     <Text  style={{fontWeight:'bold'}}>
                         Hi
                     </Text>
